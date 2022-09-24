@@ -1,0 +1,265 @@
+
+/*********************Reset CSS*********************/
+
+:root{
+  --main-font: sans-serif;
+  --font-size: 16px;
+  --main-color: #f7df1e;
+  --second-color: #222;
+  --main-modal-color: rgba(247,222,30,0.85);
+  --second-modal-color: rgba(34,34,34,0.85);
+  --container-width:1200px
+
+}
+
+html{
+    box-sizing: border-box; /*si le doy un tamaño de 200 px y luego le agrego borders va a seguir miendo lo mismo, los bordes se aplicaram hacia adrentro */
+    font-family: var(--main-font);
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after{
+box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ****************************MENU HAMBURGUESA ****************/
+
+.header{
+    position: sticky;
+    top: 0px;
+    padding: 1rem;
+    background-color: var(--main-color);
+    color: var(--second-color);
+}
+
+header h1{
+    margin: 0;
+    text-align: center;
+}
+
+.section{
+   
+    padding: 2rem;
+    padding-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: var(--container-width);
+    min-height: 100vh;
+    text-align: center;
+  
+}
+
+
+.panel{
+    position: fixed;
+    z-index: 998;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--second-modal-color);
+    transition: transform .3s ease;
+    transform: translate(0, -100%);
+    overflow-y: scroll;
+}
+
+.panel.is-active{
+    transform: translate(0,0);
+}
+
+.panel-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: 1vh;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50% ;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+
+    
+}
+
+
+
+
+
+
+.menu{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+.menu a{
+    padding: 3rem;
+    width: inherit;
+    display: block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--main-color);
+    transition: all 0.3s ease;
+}
+
+
+.menu a:hover{
+    font-weight: bold;
+    color: var(--second-color);
+    background-color: var(--main-modal-color);
+}
+
+
+#activar-reloj, #desactivar-reloj,
+#activar-alarma, #desactivar-alarma{
+    padding: 1rem;
+    margin: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #f7df1e;
+
+}
+
+
+#activar-reloj:hover, #desactivar-reloj:hover,
+#activar-alarma:hover, #desactivar-alarma:hover{
+    color: white;
+    background-color: var(--second-color);
+    transition: all 0.5s ease;
+}
+
+#activar-reloj:active, #desactivar-reloj:active,
+#activar-alarma:active, #desactivar-alarma:active{
+    color:aqua;
+    background-color: var(--second-modal-color);
+    transition: all 0.1s ease;
+}
+
+.box{
+    
+    
+    display: flex;
+    height: 300px;
+    width: 100%;
+    color: white;
+    background-color: var(--second-color);
+    position: relative;
+}
+
+.circulo{
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    left: 300px;
+    top: 250px ;
+}
+
+
+.stage{
+    display: flex;
+    min-height: 50vh;
+    background-color: var(--second-color);
+}
+.ball{
+    margin: auto;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    
+    /*********************ScrollTopButtom ****************/
+
+}
+
+.scroll-top-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: calc(5rem + 1vh);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    cursor: pointer;
+    outline: 0;
+    border: 0; /*quitar borde linea negra*/
+    transition: all 0.3s ease-out;
+}
+
+.scroll-top-btn:hover{
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
+.hidden{
+    visibility: hidden;
+    opacity: 0; /*da una opacidad*/
+}
+
+
+/*Dark theme buttom*/
+
+.dark-theme-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    left:  1vh;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    cursor: pointer;
+    outline: 0;
+    border: 0; /*quitar borde linea negra*/
+    transition: all 0.3s ease-out;
+
+}
+
+.dark-theme-btn:hover{
+    background-color: #303E63 ;
+    color: var(--main-color);
+}
+
+.dark-mode{
+   background-color: var(--second-color);
+   color: var(--main-color ); 
+}
+
+.dark-mode .stage {
+    background-color: gray;
+   
+ } 
